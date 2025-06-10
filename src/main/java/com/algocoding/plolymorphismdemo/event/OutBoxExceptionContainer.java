@@ -1,9 +1,8 @@
-package com.algocoding.plolymorphismdemo;
+package com.algocoding.plolymorphismdemo.event;
 
 import com.algocoding.plolymorphismdemo.exception.BillServiceException;
 import com.algocoding.plolymorphismdemo.exception.PaymentLimitServicesException;
 import com.algocoding.plolymorphismdemo.exception.WithdrawalConditionServiceException;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter

@@ -1,4 +1,4 @@
-package com.algocoding.plolymorphismdemo;
+package com.algocoding.plolymorphismdemo.event;
 
 import lombok.RequiredArgsConstructor;
 

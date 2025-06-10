@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/app")
 public class AppController {
 
-    private Consumer consumer;
+    private KafkaConsumer kafkaConsumer;
 
     @GetMapping(value = "/call-service")
     @ResponseStatus(HttpStatus.OK)
@@ -22,7 +22,7 @@ public class AppController {
                 .featureType(dto.featureType())
                 .exceptionContainer(dto.exceptionContainer()).build();
 
-        consumer.listen(eventDto);
+        kafkaConsumer.listen(eventDto);
 
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
