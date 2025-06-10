@@ -1,0 +1,44 @@
+server:
+  port: 9080
+
+spring:
+  kafka:
+    bootstrap-servers: 10.0.18.84:2044 #kafka:9092
+    listener:
+      ack-mode: record
+    consumer:
+      group-id: enterprise-baam
+
+kafka:
+  retry:
+    autoCreateRetryTopics: true
+    maxRetryAttempts: 99
+    retryBackoffMultiplier: 2
+    retryIntervalMilliseconds: 30000
+    maxRetryDurationMilliseconds: 200000
+  topic:
+    billCompensation: "BILL_COMPENSATION"
+
+logging:
+  level:
+    net:
+      guides: DEBUG
+    org:
+      apache:
+        catalina: DEBUG
+        http: INFO
+        tomcat: DEBUG
+      springframework:
+        boot:
+          autoconfigure: INFO
+        web: INFO
+        web.reactive.function.client.ExchangeFunctions: INFO
+      zalando:
+        logbook: TRACE
+    reactor:
+      netty:
+        http:
+          client:
+            HttpClient: DEBUG
+    root: INFO
+    tomcat: DEBUG
